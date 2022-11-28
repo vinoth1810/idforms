@@ -27,17 +27,7 @@ function Form() {
   const [image, setImage] = useState({});
 
 
-  const api = async () => {
-    const {data} = await axios.get('/api/get');
-    console.log(data)
-
-  }
-
-  React.useEffect( () => {
-
-    api();
-
-  }, [])
+  
 
 
 

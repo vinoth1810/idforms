@@ -21,6 +21,8 @@
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-floating-action-button": "^1.0.5",
+    "react-floating-button": "^1.1.1",
     "react-toastify": "^9.1.1"
   }
 }
