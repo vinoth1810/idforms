@@ -141,7 +141,7 @@ function Form() {
         <div class="row">
           <div class="form-group col-md-6">
             <label for="dob">DOB</label>
-            <input type="date" onChange={(e) => setInput({ ...input, dob: e.target.value })} value={input.dob} class="form-control" id="Dob" />
+            <input type="text" onChange={(e) => setInput({ ...input, dob: e.target.value })} value={input.dob} class="form-control" id="Dob" />
           </div>
 
           <div class="form-group col-md-6">
