@@ -52,7 +52,9 @@ function Form() {
 				blood : input.blood,
         mobile : input.mobile,
         address: input.address,
-        avatar: "sajdas"
+        avatar: "sajdas",
+        role : input.role,
+        id_number: input.IdNumber
 
 			},
 			);
