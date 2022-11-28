@@ -3,16 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "chart.js": "^3.7.1",
+    "dotenv": "^16.0.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "mal-scraper": "^2.11.4",
     "next": "13.0.5",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-toastify": "^9.1.1"
   }
 }
