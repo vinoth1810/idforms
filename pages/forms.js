@@ -17,12 +17,15 @@ function Form() {
     "role": "",
     "IdNumber": "",
     "mobile": "",
-    "image": "",
     "dob": "",
     "blood": "",
     "email": "",
     "address": ""
   });
+
+
+  const [image, setImage] = useState({});
+
 
   const api = async () => {
     const {data} = await axios.get('/api/get');
@@ -35,6 +38,47 @@ function Form() {
     api();
 
   }, [])
+
+
+
+  const handleImage = async (e) => {
+		let file = e.target.files[0];
+	
+
+
+		const videoData = new FormData();
+		videoData.append("file", file);
+
+    // const file1 = videoData;
+
+
+    console.log("--.9869",file)
+
+		// resize
+		// Resizer.imageFileResizer(file, 720, 500, "JPEG", 100, 0, async (uri) => {
+		try {
+			let { data } = await axios.post(`/api/uploadfile`,
+				videoData,
+				{
+					headers: { "Content-Type": "multpart/form-data" },
+				});
+			console.log("IMAGE UPLOADED", data.file);
+			// set image in the state
+			setImage(data.file);
+
+
+
+		
+			toast("Image uploaded");
+		} catch (err) {
+			console.log(err);
+      console.log(image)
+
+			toast("Image uploaded");
+		}
+
+	};
+
 
 
   const handlechange = async(e) => {
@@ -52,7 +96,7 @@ function Form() {
 				blood : input.blood,
         mobile : input.mobile,
         address: input.address,
-        avatar: "sajdas",
+        avatar: image,
         role : input.role,
         id_number: input.IdNumber
 
@@ -69,6 +113,9 @@ function Form() {
   }
 
   console.log("-->", input)
+
+  console.log("from server-->",image)
+
 
   return (
 
@@ -123,7 +170,7 @@ function Form() {
 
         <div class="form-group ">
           <label for="image">Your Image</label>
-          <input type="file" class="form-control" id="image" />
+          <input type="file" onChange={handleImage} class="form-control" id="image" />
         </div>
 
 
